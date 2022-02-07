@@ -1,6 +1,6 @@
 # A GraphQL API for listing startups in the UAE
 
-To use the API, you can visit this [website](http://startapp-list-graphql.herokuapp.com/graphql).
+To use the API, you can visit this [website](http://www.startapp-api.xyz/graphql).
 
 Tech stack:
 - NodeJS
