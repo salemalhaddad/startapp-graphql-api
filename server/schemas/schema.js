@@ -1,17 +1,20 @@
 var { buildSchema } = require('graphql');
+const { ApolloServer, gql } = require("apollo-server");
 
 
-var schema = buildSchema(`
-	type Query {
-		getAllStartups(id: Int): [Startup]
-		getStartupByName(name: String): Startup
+const typeDefs = gql`
+type Query {
+		getAllStartups: [Startup!]!
+		getStartupByName(name: String!): Startup!
+		getStartupById(id: Int!): Startup!
+		numberSix: String!
 	}
 
 	type Startup {
 		id: Int
 		name: String
 		website: String
-		type: String
+		type: sType!
 		positions: [Position]
 		img: String
 	}
@@ -26,7 +29,7 @@ var schema = buildSchema(`
 		createStartup(name: String, website: String, type: String): Startup
 	}
 
-	enum Type {
+	enum sType {
 		EdTech
 		Edtech
 		edTech
@@ -37,7 +40,6 @@ var schema = buildSchema(`
 		fintech
 		finTech
 	}
-`);
+`;
 
-module.exports = schema;
-
+module.exports = { typeDefs }
