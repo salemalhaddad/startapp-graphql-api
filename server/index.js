@@ -3,8 +3,8 @@ const app = express();
 const { resolvers } = require("./schemas/resolver");
 const { typeDefs } = require("./schemas/schema");
 const { ApolloServer } = require('apollo-server');
-
-const db = require("./db");
+const { DataStore } = require('notarealdb')
+const { startups } = require("./db");
 const jsonFile = require("./data/startups.json")
 // app.use(cors());
 // app.use(express.json());
@@ -20,8 +20,7 @@ const jsonFile = require("./data/startups.json")
 const server = new ApolloServer({ typeDefs, resolvers });
 // Launch the server
 server.listen().then(({ url }) => {
-	console.log(db.startups.list())
-	console.log(jsonFile)
+	// console.log(startups.entities)
 	console.log(`🚀  Server ready at ${url}`);
 });
 

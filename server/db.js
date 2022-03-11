@@ -1,8 +1,11 @@
 const { DataStore } = require('notarealdb')
 
 const startupDB = new DataStore('./data');
-const startups =  startupDB.collection('startups')
+const jsonFile = new require('./data/startups.json');
 
-module.exports = {
-	startups: startupDB.collection('startups')
-}
+const startups = startupDB.collection('startups')
+startups.entities = jsonFile;
+
+
+module.exports = startups;
+

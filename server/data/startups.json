@@ -1,89 +1,114 @@
 [
-	{
-		"id": 1,
-		"name": "Schoolvoice",
-		"website": "https://schoolvoice.com",
-		"type": "EdTech",
-		"positions": [
-			{
-				"title":"Software Developer",
-				"experience": "None",
-				"type": ["remote", "hybrid"]
-			},
-
-			{
-				"title":"Cheif of Marketing",
-				"experience": "5+ years",
-				"type": ["on-site"]
-			}
-
-		],
-		"img": "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/dzpcvvlcbdk3odjrhla5"
-
-	},
-
-	{
-		"id": 2,
-		"name": "Lune",
-		"website": "https://lune.ae",
-		"type": "FinTech",
-		"positions": [
-
-			{
-				"title": "Cloud Architech",
-				"experience": "10+ years",
-				"type": ["remote"]
-			}
-		],
-		"img": "https://media.licdn.cn/dms/image/C4D0BAQHtqnqlVXAEfQ/company-logo_200_200/0/1621848595727?e=2159024400&v=beta&t=mgG6V7UWsASTACsY-mA2tXqyavqQ1PlOjthtVoEw2AA"
-	},
-
-	{
-		"id": 3,
-		"name": "CAFU",
-		"website": "https://cafu.com",
-		"type": "Fuel services",
-		"positions": [
-			{
-				"title": "Mechatronics developer",
-				"experience": "0-1 years",
-				"type": ["on-site"]
-			},
-
-			{
-				"title": "Fullstack developer",
-				"experience": "Intern",
-				"type": ["remote", "hybrid"]
-			},
-
-			{
-				"title":"Petroleum Engineer",
-				"experience": "5+ years",
-				"type": ["onsite"]
-			}
-		],
-		"img":"https://media-exp1.licdn.com/dms/image/C4E0BAQHua6aj9XxCFw/company-logo_200_200/0/1635744860718?e=2159024400&v=beta&t=v1491hSuEyfkumKK75Uximse7FHCZZlmeg5ua77kJgA"
-	},
-
-	{
-		"id": 4,
-		"name": "BitOasis",
-		"website": "https://bitoasis.net",
-		"type": "FinTech",
-		"positions":
-		[
-			{
-				"title": "Blockchaing developer",
-				"experience": "0-1 years",
-				"type": ["Metaverse"]
-			},
-
-			{
-				"title": "Graphic Designer",
-				"experience": "2-3 years",
-				"type": ["on-site"]
-			}
-		],
-		"img": "https://image.khaleejtimes.com/?uuid=07c94e68-50e8-5d25-9d0a-8646060a49bc&function=cropresize&type=preview&source=false&q=75&crop_w=0.93567&crop_h=0.99999&x=0.03216&y=0&width=1200&height=675"
-	}
+    {
+        "id": 1,
+        "uuid": "a6e04815-e9ea-4d2a-af6f-7e7fd7fff82d",
+        "name": "Schoolvoice",
+        "website": "https://schoolvoice.com",
+        "type": "EdTech",
+        "positions": [
+            {
+                "title": "Software Developer",
+                "experience": "None",
+                "type": [
+                    "remote",
+                    "hybrid"
+                ]
+            },
+            {
+                "title": "Cheif of Marketing",
+                "experience": "5+ years",
+                "type": [
+                    "on-site"
+                ]
+            }
+        ],
+        "img": "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/dzpcvvlcbdk3odjrhla5"
+    },
+    {
+        "id": 2,
+        "uuid": "643c29e1-8073-49ef-8da0-3032c1120108",
+        "name": "Lune",
+        "website": "https://lune.ae",
+        "type": "FinTech",
+        "positions": [
+            {
+                "title": "Cloud Architech",
+                "experience": "10+ years",
+                "type": [
+                    "remote"
+                ]
+            }
+        ],
+        "img": "https://media.licdn.cn/dms/image/C4D0BAQHtqnqlVXAEfQ/company-logo_200_200/0/1621848595727?e=2159024400&v=beta&t=mgG6V7UWsASTACsY-mA2tXqyavqQ1PlOjthtVoEw2AA"
+    },
+    {
+        "id": 3,
+        "uuid": "ee53829b-8f9f-44d7-a72d-9ade298b682b",
+        "name": "CAFU",
+        "website": "https://cafu.com",
+        "type": "Fuel services",
+        "positions": [
+            {
+                "title": "Mechatronics developer",
+                "experience": "0-1 years",
+                "type": [
+                    "on-site"
+                ]
+            },
+            {
+                "title": "Fullstack developer",
+                "experience": "Intern",
+                "type": [
+                    "remote",
+                    "hybrid"
+                ]
+            },
+            {
+                "title": "Petroleum Engineer",
+                "experience": "5+ years",
+                "type": [
+                    "onsite"
+                ]
+            }
+        ],
+        "img": "https://media-exp1.licdn.com/dms/image/C4E0BAQHua6aj9XxCFw/company-logo_200_200/0/1635744860718?e=2159024400&v=beta&t=v1491hSuEyfkumKK75Uximse7FHCZZlmeg5ua77kJgA"
+    },
+    {
+        "id": 4,
+        "uuid": "28661848-5b57-41f6-8a39-8301aa87e2be",
+        "name": "BitOasis",
+        "website": "https://bitoasis.net",
+        "type": "FinTech",
+        "positions": [
+            {
+                "title": "Blockchaing developer",
+                "experience": "0-1 years",
+                "type": [
+                    "Metaverse"
+                ]
+            },
+            {
+                "title": "Graphic Designer",
+                "experience": "2-3 years",
+                "type": [
+                    "on-site"
+                ]
+            }
+        ],
+        "img": "https://image.khaleejtimes.com/?uuid=07c94e68-50e8-5d25-9d0a-8646060a49bc&function=cropresize&type=preview&source=false&q=75&crop_w=0.93567&crop_h=0.99999&x=0.03216&y=0&width=1200&height=675"
+    },
+    {
+        "id": 5,
+        "uuid": "a92da9d6-e0ba-438c-97ca-160a7c679653",
+        "name": "Baraka",
+        "website": "baraka.com",
+        "type": "FinTech"
+    },
+    {
+        "id": 6,
+        "uuid": "8535693a-e496-499a-a507-c59782439d38",
+        "name": "kopii",
+        "website": "kopii.ae",
+        "type": "consumer tech"
+    }
 ]
