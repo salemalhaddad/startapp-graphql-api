@@ -1,30 +1,5 @@
 [
     {
-        "id": 1,
-        "uuid": "a6e04815-e9ea-4d2a-af6f-7e7fd7fff82d",
-        "name": "Schoolvoice",
-        "website": "https://schoolvoice.com",
-        "type": "EdTech",
-        "positions": [
-            {
-                "title": "Software Developer",
-                "experience": "None",
-                "type": [
-                    "remote",
-                    "hybrid"
-                ]
-            },
-            {
-                "title": "Cheif of Marketing",
-                "experience": "5+ years",
-                "type": [
-                    "on-site"
-                ]
-            }
-        ],
-        "img": "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/dzpcvvlcbdk3odjrhla5"
-    },
-    {
         "id": 2,
         "uuid": "643c29e1-8073-49ef-8da0-3032c1120108",
         "name": "Lune",
@@ -37,6 +12,11 @@
                 "type": [
                     "remote"
                 ]
+            },
+            {
+                "experience": "2 years",
+                "title": "Software Engineer",
+                "type": "Remote"
             }
         ],
         "img": "https://media.licdn.cn/dms/image/C4D0BAQHtqnqlVXAEfQ/company-logo_200_200/0/1621848595727?e=2159024400&v=beta&t=mgG6V7UWsASTACsY-mA2tXqyavqQ1PlOjthtVoEw2AA"
@@ -109,6 +89,30 @@
         "uuid": "8535693a-e496-499a-a507-c59782439d38",
         "name": "kopii",
         "website": "kopii.ae",
-        "type": "consumer tech"
+        "type": "consumer tech",
+        "positions": [
+            {
+                "experience": "0 years",
+                "title": "Backend Engineer Intern",
+                "type": "Remote"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "uuid": "406a9af3-0868-4e06-9e45-3168cfa0f060",
+        "name": "Sarwa",
+        "website": "sarwa.co",
+        "type": "FinTech",
+        "img": "https://thewealthmosaic.s3.amazonaws.com/media/Logo_Sarwa.png",
+        "positions": []
+    },
+    {
+        "uuid": "191bc229-f9e7-409a-ad20-73fa6012885d",
+        "name": "swvl",
+        "website": "swvl.com",
+        "type": "ridesharing",
+        "img": "",
+        "positions": []
     }
 ]

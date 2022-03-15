@@ -4,13 +4,13 @@ const typeDefs = gql`
 type Query {
 		getAllStartups: [Startup!]!
 		getStartupByName(name: String!): Startup!
-		getStartupById(id: Int!): Startup!
+		getStartupByUUID(uuid: String!): Startup!
 		getStartupByType(type: sType!): Startup!
 		numberSix: String!
 	}
 
 	type Startup {
-		id: Int
+		# id: Int
 		uuid: String!
 		name: String!
 		website: String!
@@ -27,7 +27,9 @@ type Query {
 
 	type Mutation {
 		createStartup(name: String, website: String, type: String): Startup!
-		addPositions(id: Int, positions: String): Startup!
+		addPosition(uuid: String, title: String, experience: String, type: String): Startup!
+		deleteStartup(uuid: String): Startup!
+		addImg(uuid: String!, img: String!): Startup!
 	}
 
 	enum sType {
