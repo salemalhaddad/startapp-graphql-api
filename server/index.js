@@ -19,10 +19,11 @@ const jsonFile = require("./data/startups.json")
 
 const server = new ApolloServer({ typeDefs, resolvers });
 // Launch the server
-server.listen().then(({ url }) => {
-	// console.log(startups.entities)
-	console.log(`🚀  Server ready at ${url}`);
+const PORT = process.env.PORT || 5555;
+server.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
+
 
 
 // var port = process.env.PORT || 5555;
