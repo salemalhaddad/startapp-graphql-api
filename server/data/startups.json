@@ -16,7 +16,7 @@
             {
                 "experience": "2 years",
                 "title": "Software Engineer",
-                "type": "Remote"
+                "type": ["Remote"]
             }
         ],
         "img": "https://media.licdn.cn/dms/image/C4D0BAQHtqnqlVXAEfQ/company-logo_200_200/0/1621848595727?e=2159024400&v=beta&t=mgG6V7UWsASTACsY-mA2tXqyavqQ1PlOjthtVoEw2AA"

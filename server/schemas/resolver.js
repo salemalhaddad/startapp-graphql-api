@@ -1,23 +1,25 @@
 // const { startups } = require("../db");
-const startups = require('../data/startups.json')
-const fs = require("fs")
 const { uuid, isUuid } = require('uuidv4');
-let startupjson = fs.readFileSync('./server/data/startups.json', "utf-8")
-let startupFile = JSON.parse(startupjson)
+const { PrismaClient } = require('@prisma/client')
+
+const prisma = new PrismaClient();
 
 const resolvers = {
 	Query: {
 		getAllStartups: () => { //query all startups
-			return startups
+			return prisma.startup.findMany()
 		},
-		getStartupByUUID: (parent, args) => { //query startup by UUID
-			return startups.find(getStartupByUUID => getStartupByUUID.uuid === args.uuid)
+		getStartupByUUID: async (parent, { uuid }) => { //query startup by UUID
+			const startups = await prisma.startup.findMany()
+			return startups.find(getStartupByUUID => getStartupByUUID.uuid === uuid)
 		},
-		getStartupByName: (parent, args) => { //query startup by name
-			return startups.find(getStartupByName => getStartupByName.name === args.name)
+		getStartupByName: async (parent, { name }) => { //query startup by name
+			const startups = await prisma.startup.findMany()
+			return startups.find(getStartupByName => getStartupByName.name === name)
 		},
-		getStartupByType: (parent, args) => { //query startup by type
-			return startups.find(getStartupByType => getStartupByType.type === args.type)
+		getStartupByType: async (parent, { type }) => { //query startup by type
+			const startups = await prisma.startup.findMany()
+			return startups.find(getStartupByType => getStartupByType.type === type)
 		},
 	},
 	Startup: {
@@ -33,96 +35,95 @@ const resolvers = {
 	Position: {
 		title: (getStartupByUUID) => getStartupByUUID.title,
 		experience: (getStartupByUUID) => getStartupByUUID.experience,
-		type: (getStartupByUUID) => getStartupByUUID.experience
+		type: (getStartupByUUID) => getStartupByUUID.type
 	},
 	Mutation: {
-		createStartup: (parent, args) => { //create startup given name, website, type
-			// let idCount = startups.length + 1
+		createStartup: async (parent, {name, website, type, img}) => { //create startup given name, website, type
+			const startups = await prisma.startup.findMany()
+
+			console.log(startups)
 
 			const startup = {
-				// id: idCount,
 				uuid: uuid(),
-				name: args.name,
-				website: args.website,
-				type: args.type,
-				img: "",
+				name: name,
+				website: website,
+				type: type,
+				img: img,
 				positions: []
 			}
 
-			if (startups.some(item => item.name === startup.name) || startups.some(item => item.website === startup.website)) { //check if startup exists in json file
+			if (startups.some(item => item.name === startup.name) || startup.some(item => item.website === startup.website)) { //check if startup exists in db
 				throw new Error('Duplicate startup name and/or website');
 			}
 
-			else {
-				startupFile.push(startup)
-				startupjson = JSON.stringify(startupFile, null, 4)
-				fs.writeFileSync("./server/data/startups.json", startupjson, "utf-8")
-				console.log(1)
-			}
-
-			return startup;
+			return prisma.startup.create({
+				data: startup
+			});
 		},
-		deleteStartup: (parent, args) => { //delete startup given uuid
-			let idCount = startups.length + 1
+		deleteStartup: (parent, { uuid }) => { //delete startup given uuid
 
-			if (startups.some(item => item.uuid === args.uuid) || startups.some(item => item.name === args.name) || startups.some(item => item.website === args.website)) { //check if startup exists in json file
-				startupFile = startupFile.filter(child => parseInt(child.uuid) !== args.uuid)
-				startupjson = JSON.stringify(startupFile, null, 4)
-				fs.writeFileSync("./server/data/startups.json", startupjson, "utf-8")
-				console.log(startupFile)
-				throw new Error('Startup Deleted Successfully');
-			}
-			else {
-				throw new Error('No such id');
-			}
-			return startupFile;
+			return prisma.startup.delete({
+				where: {
+				  uuid: uuid,
+				},
+			  });
 		},
-		addPosition: (parent, args) => { //add a position given uuid
-			target = startups.find(addPosition => addPosition.uuid === args.uuid)
+		addPosition: async (parent, {uuid, title, experience, type}) => { //add a position given uuid
+			const startups = await prisma.startup.findMany()
+
+			target = startups.find(addPosition => addPosition.uuid === uuid)
 			let startup = {
-				experience: args.experience,
-				title: args.title,
-				type: args.type
+				experience: experience,
+				title: title,
+				type: type
 			}
 
 			if (startups.some(item => item.uuid === target.uuid)) {
 				let index = 1;
 				let i = 0;
 				for (i = 0; i < startups.length; i++) {
-					if (startups[i].uuid === args.uuid)
+					if (startups[i].uuid === uuid)
 						index = i
 				}
-				startupFile[index].positions.push(startup)
-				startupjson = JSON.stringify(startupFile, null, 4)
-				fs.writeFileSync("./server/data/startups.json", startupjson, "utf-8")
+				return prisma.startup.update({
+					where: {
+						uuid: uuid
+					},
+					data: {
+						positions: {
+							push: startup
+						}
+					}
+				})
 			}
 			else {
 				throw new Error('Startup not found with given id');
 			}
-			return target;
 		},
-		addImg: (parent, args) => { //add img given uuid
-			target = startups.find(addPosition => addPosition.uuid === args.uuid)
+		addImg: async (parent, { uuid, img }) => { //add img given uuid
+			const startups = await prisma.startup.findMany()
 
-			let startup = {
-				img: args.img
-			}
+			target = startups.find(addPosition => addPosition.uuid === uuid)
 
 			if (startups.some(item => item.uuid === target.uuid)) {
 				let index = 1;
 				let i = 0;
 				for (i = 0; i < startups.length; i++) {
-					if (startups[i].uuid === args.uuid)
+					if (startups[i].uuid === uuid)
 						index = i
 				}
-				startupFile[index].img = startup.img
-				startupjson = JSON.stringify(startupFile, null, 4)
-				fs.writeFileSync("./server/data/startups.json", startupjson, "utf-8")
+				return prisma.startup.update({
+					where: {
+						uuid: uuid
+					},
+					data: {
+						img: img
+					}
+				})
 			}
 			else {
 				throw new Error('Startup not found with given id');
 			}
-			return target;
 		}
 	}
 };

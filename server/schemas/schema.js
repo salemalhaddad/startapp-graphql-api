@@ -22,12 +22,12 @@ type Query {
 	type Position {
 		title: String
 		experience: String
-		type: [String]!
+		type: [String]
 	}
 
 	type Mutation {
-		createStartup(name: String, website: String, type: String): Startup!
-		addPosition(uuid: String, title: String, experience: String, type: String): Startup!
+		createStartup(name: String, website: String, type: String, img: String): Startup!
+		addPosition(uuid: String, title: String, experience: String, type: [String]): Startup!
 		deleteStartup(uuid: String): Startup!
 		addImg(uuid: String!, img: String!): Startup!
 	}
@@ -42,6 +42,7 @@ type Query {
 		FinTech
 		fintech
 		finTech
+		Consumer Tech
 	}
 `;
 
