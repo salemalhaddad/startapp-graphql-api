@@ -2,22 +2,25 @@
 	"development": {
 	  "username": "salem.alhaddad",
 	  "password": "12345678",
+	  "port": 4321,
 	  "database": "postgres",
-	  "host": "127.0.0.1",
+	  "host": "localhost",
 	  "dialect": "postgres"
 	},
 	"test": {
 		"username": "salem.alhaddad",
 		"password": "12345678",
+		"port": 4321,
 		"database": "postgres",
-		"host": "127.0.0.1",
+		"host": "localhost",
 		"dialect": "postgres"
 	},
 	"production": {
 	  "username": "salem.alhaddad",
 	  "password": "12345678",
+	  "port": 4321,
 	  "database": "postgres",
-	  "host": "127.0.0.1",
+	  "host": "localhost",
 	  "dialect": "postgres"
 	}
   }
