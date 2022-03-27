@@ -1,23 +1,23 @@
 {
 	"development": {
-	  "username": "root",
-	  "password": "password",
-	  "database": "FakeDatabase",
-	  "host": "localhost",
-	  "dialect": "mysql"
+	  "username": "salem.alhaddad",
+	  "password": "12345678",
+	  "database": "postgres",
+	  "host": "127.0.0.1",
+	  "dialect": "postgres"
 	},
 	"test": {
-	  "username": "root",
-	  "password": null,
-	  "database": "database_test",
-	  "host": "127.0.0.1",
-	  "dialect": "mysql"
+		"username": "salem.alhaddad",
+		"password": "12345678",
+		"database": "postgres",
+		"host": "127.0.0.1",
+		"dialect": "postgres"
 	},
 	"production": {
-	  "username": "root",
-	  "password": null,
-	  "database": "database_production",
+	  "username": "salem.alhaddad",
+	  "password": "12345678",
+	  "database": "postgres",
 	  "host": "127.0.0.1",
-	  "dialect": "mysql"
+	  "dialect": "postgres"
 	}
   }
