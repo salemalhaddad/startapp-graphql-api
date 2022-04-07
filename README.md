@@ -10,6 +10,7 @@ To use the API, you can visit this [website](http://www.startapp-api.xyz/graphql
 - Prisma as ORM
 - PostgresSQL as DB
 - Docker
+
 **Frontend:**
 - React
 - Tailwind CSS
