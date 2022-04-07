@@ -7,7 +7,6 @@ To use the API, you can visit this [website](http://www.startapp-api.xyz/graphql
 **Backend:**
 - NodeJS
 - GraphQL
-- ExpressJS
 - Prisma as ORM
 - PostgresSQL as DB
 - Docker
