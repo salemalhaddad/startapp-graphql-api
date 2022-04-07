@@ -3,9 +3,16 @@
 To use the API, you can visit this [website](http://www.startapp-api.xyz/graphql).
 
 Tech stack:
-- NodeJS
-- GraphQL
-- ExpressJS
+  Backend:
+    - NodeJS
+    - GraphQL
+    - ExpressJS
+    - Prisma as ORM
+    - PostgresSQL as DB
+    - Docker
+  Frontend:
+    - React
+    - Tailwind CSS
 
 
 # Querying the list of startups
