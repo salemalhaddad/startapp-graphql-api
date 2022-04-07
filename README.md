@@ -2,8 +2,8 @@
 
 To use the API, you can visit this [website](http://www.startapp-api.xyz/graphql).
 
-**Tech stack:
-**Backend:
+**Tech stack:**
+**Backend:**
 - NodeJS
 - GraphQL
 - ExpressJS
