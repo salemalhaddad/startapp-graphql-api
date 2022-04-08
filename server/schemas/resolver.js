@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 
 const resolvers = {
 	Query: {
-		getAllStartups: () => { //query all startups
+		getAllStartups: async() => { //query all startups
 			return prisma.startup.findMany()
 		},
 		getStartupByUUID: async (parent, { uuid }) => { //query startup by UUID
@@ -52,7 +52,7 @@ const resolvers = {
 				positions: []
 			}
 
-			if (startups.some(item => item.name === startup.name) || startup.some(item => item.website === startup.website)) { //check if startup exists in db
+			if (startups.some(item => item.name === startup.name) || startups.some(item => item.website === startup.website)) { //check if startup exists in db
 				throw new Error('Duplicate startup name and/or website');
 			}
 
