@@ -1,6 +1,16 @@
 version: '3.8'
 services:
+  app:
+      env_file:
+        - .env
+      build:
+        context: .
+      links:
+        - postgres
+      ports:
+        - "5555:5555"
   postgres:
+    container_name: startapp
     image: postgres:14
     restart: always
     environment:
