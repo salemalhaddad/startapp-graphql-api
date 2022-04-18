@@ -29,7 +29,9 @@ const resolvers = {
 		website: (getStartupByUUID) => getStartupByUUID.website,
 		type: (getStartupByUUID) => getStartupByUUID.type,
 		positions: (getStartupByUUID) => getStartupByUUID.positions,
-		img: (getStartupByUUID) => getStartupByUUID.img
+		img: (getStartupByUUID) => getStartupByUUID.img,
+		description: (getStartupByUUID) => getStartupByUUID.description
+
 	},
 
 	Position: {
@@ -85,6 +87,7 @@ const resolvers = {
 					if (startups[i].uuid === uuid)
 						index = i
 				}
+
 				return prisma.startup.update({
 					where: {
 						uuid: uuid
@@ -118,6 +121,31 @@ const resolvers = {
 					},
 					data: {
 						img: img
+					}
+				})
+			}
+			else {
+				throw new Error('Startup not found with given id');
+			}
+		},
+		addDescription: async (parent, { uuid, description }) => { //add description given uuid
+			const startups = await prisma.startup.findMany()
+
+			target = startups.find(addDescription => addDescription.uuid === uuid)
+
+			if (startups.some(item => item.uuid === target.uuid)) {
+				let index = 1;
+				let i = 0;
+				for (i = 0; i < startups.length; i++) {
+					if (startups[i].uuid === uuid)
+						index = i
+				}
+				return prisma.startup.update({
+					where: {
+						uuid: uuid
+					},
+					data: {
+						description: description
 					}
 				})
 			}

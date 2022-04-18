@@ -17,6 +17,7 @@ type Query {
 		type: sType!
 		positions: [Position]
 		img: String
+		description: String
 	}
 
 	type Position {
@@ -30,6 +31,7 @@ type Query {
 		addPosition(uuid: String, title: String, experience: String, type: [String]): Startup!
 		deleteStartup(uuid: String): Startup!
 		addImg(uuid: String!, img: String!): Startup!
+		addDescription(uuid: String!, description: String!): Startup!
 	}
 
 	enum sType {

@@ -8,10 +8,11 @@ datasource db {
 }
 
 model startup {
-  uuid      String @id @db.Uuid
-  name      String @db.VarChar
-  website   String @db.VarChar
-  type      String @db.VarChar
-  positions Json[] @db.Json
-  img       String @db.VarChar
+  uuid        String  @id @db.Uuid
+  name        String  @db.VarChar
+  website     String  @db.VarChar
+  type        String  @db.VarChar
+  positions   Json[]  @db.Json
+  img         String  @db.VarChar
+  description String? @db.VarChar
 }
