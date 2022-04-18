@@ -1,0 +1,38 @@
+spectaql:
+  logoFile:
+  faviconFile:
+
+introspection:
+  removeTrailingPeriodFromDescriptions: false
+  schemaFile:
+  url: https://www.startapp-api.xyz/graphql
+  metadataFile:
+  dynamicExamplesProcessingModule:
+  queryNameStategy:
+
+extensions:
+  graphqlScalarExamples: true
+
+info:
+  title: StartApp API
+  description: Welcome to the party!
+  termsOfService:
+  contact:
+    name: API Support
+    url:
+    email: contact@salemalhaddad.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-introItems:
+    - title: Important thing 1
+      description: Some important stuff we wanted you to know. Supports `markdown`
+
+servers:
+  - url: https://www.startapp-api.xyz/graphql
+    description: Production
+    production: true
+    headers:
+      - name: Authorization
+        example: Bearer <YOUR_TOKEN_HERE>
+        comment: Your foo from bar
